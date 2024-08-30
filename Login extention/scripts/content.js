@@ -1,25 +1,28 @@
 
+console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\nn\\n\n\n\n\n\nb\nb\nn\\\nn\\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n");
 function myFunction() {
+  console.log("Anirudha Sahu");
   const username = document.getElementById("LoginUserPassword_auth_username");
   const passward = document.getElementById("LoginUserPassword_auth_password");
-  const button_check = document.getElementById("UserCheck_Login_Button");
+
+  username.value = "B323008";
+  console.log("Got username");
+
+  passward.value = "3a.Anirudha sahu";
+  console.log("Got password");
+
+  oAuthentication.submitActiveForm()
 
 
-  if (username) {
-    username.value = "B323008";
-    console.log("Got username");
-  }
-  if (passward) {
-    passward.value = "3a.Anirudha sahu";
-    console.log("Got password");
-  }
-  if (button_check) {
-      button_check.click();
-    console.log("Got button");
-    oAuthentication.submitActiveForm();
-  }
 }
+
+myFunction();
+
 const enable_btn=document.getElementById("enabling_btn");
 if(enable_btn){
+
+  console.log("Enable");
   enable_btn.addEventListener("click",myFunction);
 }
+
+
