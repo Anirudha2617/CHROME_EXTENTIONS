@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Font style change",
+    "version": "1.0",
+    "description": "Changes the styling of the fonts accord to your needs.",
+
+    "action": {
+        "default_popup": "popup.html"
+    }
+}

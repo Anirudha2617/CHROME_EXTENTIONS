@@ -1,0 +1,9 @@
+body {
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    min-width: 105px; /* your desired width */
+    max-width: 100%;
+    position: relative;
+    vertical-align:middle;
+  }
