@@ -1,0 +1,17 @@
+{
+    "manifest_version":3,
+    "name": "My Browser action",
+    "version":"1.0",
+    "description":"This is my first browseer action extention",
+    "actions":{
+        "default_popup":"mainpage.html",
+        "default_title":"Click me"
+    },
+
+    "permissions":[
+        "activeTab",
+        "storage"
+    ]
+    
+
+}
