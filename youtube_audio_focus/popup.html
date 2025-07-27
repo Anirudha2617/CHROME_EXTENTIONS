@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Focus Controls</title>
+    <style>
+        /* Basic styling for the popup */
+        body {
+            font-family: 'Inter', sans-serif;
+            width: 250px;
+            padding: 15px;
+            background-color: #1a1a1a; /* Dark background */
+            color: #f0f0f0; /* Light text */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+            text-align: center;
+        }
+        .control-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2a2a2a;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid #3a3a3a;
+        }
+        .control-group label {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #c0c0c0;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #4CAF50; /* Green for ON */
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px #4CAF50;
+        }
+        input:checked + .slider:before {
+            transform: translateX(16px);
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h2>YouTube Focus Controls</h2>
+    <div class="control-group">
+        <label for="toggleThumbnails">Hide Thumbnails</label>
+        <label class="toggle-switch">
+            <input type="checkbox" id="toggleThumbnails">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="control-group">
+        <label for="toggleVideo">Hide Video Player</label>
+        <label class="toggle-switch">
+            <input type="checkbox" id="toggleVideo">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="button-group">
+        <button id="applySettings">Apply Settings</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

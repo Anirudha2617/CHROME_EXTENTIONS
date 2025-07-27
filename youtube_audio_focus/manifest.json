@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Audio & Text Focus",
+  "version": "1.0",
+  "description": "Hides YouTube video thumbnails and the video player, leaving only text and audio, with user controls.",
+  "icons": {
+
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ]
+}
