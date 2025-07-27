@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Block YouTube Shorts",
+    "version": "1.3",
+    "description": "Blocks YouTube Shorts entirely, including direct links and homepage sections.",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
