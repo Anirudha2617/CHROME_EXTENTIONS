@@ -41,7 +41,7 @@ function applyCssRules() {
 
         ];
         thumbnailSelectors.forEach(selector => {
-            cssToInject += `${selector} { opacity: 0 !important; }\n`;
+            cssToInject += `${selector} { opacity: 0 !important;pointer-events: none; }\n`;
         });
         console.log("Extension: Thumbnail hiding CSS included.");
     }
