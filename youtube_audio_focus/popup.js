@@ -3,19 +3,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleThumbnails = document.getElementById('toggleThumbnails');
     const toggleVideo = document.getElementById('toggleVideo');
+    const toggleView = document.getElementById('toggleView');
     const applySettingsButton = document.getElementById('applySettings');
 
     // Load saved settings when the popup opens
-    chrome.storage.local.get(['hideThumbnails', 'hideVideo'], (result) => {
+    chrome.storage.local.get(['hideThumbnails', 'hideVideo', 'hideView'], (result) => {
         toggleThumbnails.checked = result.hideThumbnails !== false; // Default to true if not set
         toggleVideo.checked = result.hideVideo === true; // Default to false if not set (only true if explicitly true)
+        toggleView.checked = result.hideView === true; // Default to false if not set (only true if explicitly true)
     });
 
     // Function to send current settings to the content script
     function sendSettingsToContentScript() {
         const settings = {
             hideThumbnails: toggleThumbnails.checked,
-            hideVideo: toggleVideo.checked
+            hideVideo: toggleVideo.checked,
+            hideView: toggleView.checked,
         };
 
         // Save settings to local storage
@@ -41,4 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // You might prefer this for a more responsive user experience
     toggleThumbnails.addEventListener('change', sendSettingsToContentScript);
     toggleVideo.addEventListener('change', sendSettingsToContentScript);
+    toggleView.addEventListener('change', sendSettingsToContentScript);
 });
